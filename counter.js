@@ -42,6 +42,11 @@ var text = input.toLowerCase(); //covert all user input to lower case;
 
 if(text != null && text != ""){   //do not operation if input is empty
 var result = text.match(vowels);  //searches and returns an array of matched vowels
+if(result == null){
+    alert(`your input "${input}" has: no Vowels in it`);
+    document.getElementById("userText").value = ""; 
+    totalCount = 0;
+}
 var totalCount = result.length;   //count number of vowel found from text
 
 
@@ -56,7 +61,7 @@ var countForO = result.filter((x) => x === "o").length;
 var countForU = result.filter((x) => x === "u").length;
 
 
-alert("Total= "+totalCount+" \n A= "+countForA+"    E= "+countForE+"    I= "+countForI+"    O= "+countForO+"    U= "+countForU)
+alert("your input \""+input+"\" has:  "+"\nTotal No. of Vowels= "+totalCount+" \n A= "+countForA+"    E= "+countForE+"    I= "+countForI+"    O= "+countForO+"    U= "+countForU)
 document.getElementById("userText").value = ""; 
 } 
     else{
